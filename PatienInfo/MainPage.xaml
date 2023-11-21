@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatienInfo.MainPage">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="22"
+            Padding="10,0"
+            VerticalOptions="Start"
+            HorizontalOptions="FillAndExpand">
+            <Frame Padding="5" CornerRadius="4">
+                <Label Text="Hiking Mountain Trip Info" HorizontalTextAlignment="Center"
+                       TextColor="Red" FontSize="Subtitle"/>
+            </Frame>
+            
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Name of Trip" VerticalOptions="Center" Margin="0,0,42,0"
+                       HorizontalOptions="Start"/>
+                <Entry x:Name="txtName" HorizontalOptions="StartAndExpand" 
+                       Placeholder="Enter name of your trip" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Distance (KM)" VerticalOptions="Center" Margin="0,0,42,0"
+                       HorizontalOptions="Start"/>
+                <Entry x:Name="txtDistance" HorizontalOptions="StartAndExpand" 
+                       Placeholder="Enter Distance" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Elevation (Meter)" VerticalOptions="Center" Margin="0,0,42,0"
+                       HorizontalOptions="Start"/>
+                <Entry x:Name="txtElevation" HorizontalOptions="StartAndExpand" 
+                       Placeholder="Enter Elevation" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Date" VerticalOptions="Center" Margin="0,0,42,0"/>
+                <DatePicker x:Name="dtpDate" Format="dd/MM/yy"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Parking Available" VerticalOptions="Center" Margin="0,0,42,0"/>
+                <Picker x:Name="swtPA" Title="ParkingAvailable" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Yes</x:String>
+                        <x:String>No</x:String>
+                    </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Level" VerticalOptions="Center" Margin="0,0,42,0"/>
+                <Picker x:Name="cbxLevel" Title="Select Level" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>High</x:String>
+                        <x:String>Medium</x:String>
+                        <x:String>Low</x:String>
+                    </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Technical difficulty" VerticalOptions="Center" Margin="0,0,42,0"/>
+                <Picker x:Name="cbxTD"  Title="Select TD" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Easy</x:String>
+                        <x:String>Normal</x:String>
+                        <x:String>Hard</x:String>
+                    </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Location" VerticalOptions="Center" Margin="0,0,42,0"
+                       HorizontalOptions="Start"/>
+                <Entry x:Name="txtLocation" HorizontalOptions="StartAndExpand" 
+                       Placeholder="Enter Location" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Descriptions" VerticalOptions="Center" Margin="0,0,42,0"
+                       HorizontalOptions="Start"/>
+                <Entry x:Name="txtDescriptions" HorizontalOptions="StartAndExpand" 
+                       Placeholder="Enter Descriptions" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            
+            <Button x:Name="btnSubmit" Text="Submit" Clicked="btnSubmit_Clicked"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Display info users selected"/>
+            
+            <Button x:Name="btnView" Text="View" Clicked ="btnView_Clicked"
+                    HorizontalOptions="Center"/>
+            
+            <Button x:Name="btnLoad" Text="Loads HikingTrip from DB" Clicked="btnLoad_Hiking_Clicked"
+                    HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
